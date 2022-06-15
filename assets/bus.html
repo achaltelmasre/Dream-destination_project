@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;
+  
+}
+
+/* Full-width input fields */
+input[type=text], input[type=number] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color:rgb(252, 211, 29) ;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  width:auto;
+  padding: 10px 18px;
+  background-color: red;
+  align-items: center;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+}
+
+img.avatar {
+  width: 50%;
+
+}
+
+.cab2 {
+  padding: 16px;
+  align-content: center;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 50%; /* Could be more or less, depending on screen size */
+  
+}
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover{
+  right:27px;
+  top:2px;
+  font-size: 36px;
+
+}
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+.cabcontainer{
+
+color : tomato;
+height: 360px;
+width: 100%;
+padding: 20px;
+flex:center ;
+}
+#cab{
+  display: flex;
+ 
+}
+
+</style>
+</head>
+<body>
+ <div id="cab" > 
+ <div class="cabcontainer container-fluid cantainer" >
+   <div class="row">
+     <div class="col-md-6 ">
+  <h1 class="p-3">Do You Want To Book A Bus?<i class="fa-solid fa-van-shuttle"></i></h1>
+  <h3 class="p-3">Hurry Up! Book Your Ride Now. You Can Call Us or Make a Enquiry. We Will Get Back To You.</h3>
+    <br>  
+    <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;background-color: tomato;color: white;">Book Now</button>
+
+          <h2>You Can Contact Us </h2>
+          
+          <a href="tel:1234567890">
+          <img src="./img/call.png" alt="call"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <a href="mailto:hello@gmail.com" target="_blank"><img src="./img/gmail.png" alt="gmail"></a>
+            <br>
+          <b>1234567890</b>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <b>hello@gmail.com</b>
+
+          <div style="margin-top: 30px;">
+            <a href="./book_now.html"><button class="btn btn-outline-warning" style="width:400px;color: red;" ><i class="fa-solid fa-angles-left" style="font-size: larger;"></i>&nbsp;&nbsp;&nbsp;&nbsp;Back To Book Now Page</button></a>
+          </div>
+
+      </div>
+
+ <div class="col-md-6 pt-3 mt-3"><img src="./img/bus.jpg" height="400px" width="700px">
+
+</div>
+</div>
+</div>
+
+<div id="id01" class="modal">
+  
+  <form class="modal-content" >
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="./img/bus4.jpg"  class="avatar">
+    </div>
+
+    <div class="cab2" >
+      
+      <label for="uname"><b>Your Name</b></label>
+      <input type="text" placeholder="Enter Your Name" name="uname" required>
+
+      <label for="num"><b>Your Mobile Number</b></label>
+      <input type="number" placeholder="Enter Mobile Number" name="num" required>
+      
+      <label for="number"><b>Passenger Number</b></label>
+      <input type="number" placeholder="Enter Passenger Number" name="number" required>
+      
+      <label for="Pickup"><b>Pickup Address</b></label>
+      <input type="text" placeholder="Your Address" name="pickup" required>
+
+      <label for="dest"><b>Destination Address</b></label>
+      <input type="text" placeholder="Destination" name="dest" required>
+
+     
+      
+
+    
+      <button type="submit">Submit</button>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+    </div>
+
+    <div class="cab2" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      
+    </div>
+  </form>
+  
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+<script src="https://kit.fontawesome.com/e872ba44e8.js" crossorigin="anonymous"></script>
+</body>
+</html>

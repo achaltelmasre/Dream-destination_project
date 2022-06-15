@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Now</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+    crossorigin="anonymous"
+  />
+
+  
+    <style>
+                
+        html{
+            font-size: 62.5%;
+            overflow-x: hidden;
+            scroll-padding-top: 5rem;
+            scroll-behavior: smooth;
+        }
+
+        section{
+            padding:5rem 9%;
+        }
+
+
+
+        .flight .row{
+            display:flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap:1.5rem;
+        }
+
+        .flight .row .content{
+            flex:1 1 42rem;
+        }
+
+        .flight .row .books-slider{
+            flex:1 1 42rem;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .flight .row .books-slider a img{
+            height: 25rem;
+        }
+
+        .flight .row .books-slider a:hover img{
+            transform: scale(.9);
+        }
+
+        .flight .row .books-slider .stand{
+            width:100%;
+            margin-top: -2rem;
+        }
+
+        .flight{
+            background: url(./assets/img/banner-bg.jpg) no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        #form{
+            background-color:black;
+            height:500px;
+            width: 800px;
+            margin-left:7px;
+            padding:20px;
+            opacity: 0.7;
+        }
+        #form h3{
+            border-bottom: 2px solid #3399ff;
+            width:210px;
+            padding: 5px;
+        }
+        ::placeholder{
+            color:#fff
+        }
+        #input #input-group{
+            width:200px;
+            margin:5px;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            outline: none;
+            background: transparent;
+            color:#fff
+        }
+        #input2 #input-group{
+            width:195px;
+            margin:5px;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            outline: none;
+            background: transparent;
+            color:#fff
+        }
+        #input3 #input-group{
+            margin-left: 50px;
+        }
+        #input4 #input-group{
+            width:200px;
+            margin:5px;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            outline: none;
+            background: transparent;
+            color:#fff
+        }
+        #input4 #input-group1{
+            width:615px;
+            margin:5px;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            outline: none;
+            background: transparent;
+            color:#fff
+        }
+        #input5 h3{
+            border-bottom: 2px solid #3399ff;
+            width:220px;
+            padding: 5px;
+        }
+        #input6 #input-group{
+            width:300px;
+            margin:5px;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            outline: none;
+            background: transparent;
+            color:#fff
+        }
+        #input6 #input-group1{
+            width:400px;
+            margin:5px;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            outline: none;
+            background: transparent;
+            color:#fff
+        }
+
+        #input {
+            font-size: 15px;
+        }
+        .flight2{
+            background-image: url(./img/airport.jpeg);
+            height:700px;
+            width:100%;
+
+        }
+
+        .card {
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        transition: 0.3s;
+        width: 80%;
+        height:500px;
+        }
+
+        .card:hover {
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+        }
+
+        .container {
+        padding: 10px;
+        align-items: center;
+        text-align: center;
+        margin: auto;
+        
+        }
+
+        p{
+            text-align: justify;
+            font-size: larger;
+        }
+        i{
+            font-size: 20px;
+        }
+
+        .hotel{
+            background-image: url(./img/hotel.jpg);
+        }
+        /* navbar */
+        
+
+nav{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 5px 0;
+}
+.logo{
+    width: 120px;
+    cursor: pointer;
+}
+.cart-icon{
+    width: 30px;
+    cursor: pointer;
+}
+nav ul{
+    flex: 1;
+    text-align: center;
+    padding-right: 30px;
+    font-size: 18px;
+}
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 30px;
+}
+nav ul li a{
+    color: white;
+    text-decoration: none;
+    position: relative;
+}
+nav ul li a::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    bottom: -5px;
+    transition: width 0.3s;
+}
+nav ul li a :hover ::after{
+    width: 50%;
+}
+
+/* Footer css */
+.footer{
+              padding: 70px 20px 15px;
+              background-image: linear-gradient(#163049,#6713a7);
+              color: white;
+            }
+            .footer-logo{
+                width: 100px;
+                margin-top: 5px;
+                margin-bottom: 5x;
+            }
+            .footer h4{
+                text-align: left;
+                margin-top: 15px;
+                margin-bottom: 25px;
+            }
+            .footer p{
+                font-size: 12px;
+                text-align: justify;
+                padding-right: 35px;
+            }
+            .footer .row .fa{
+                padding-right: 20px;
+                font-size: 15px;
+            }
+            .footer hr{
+                margin-top: 10px;
+                background: lightgrey;
+            }
+            .fa-heart{
+                margin: 0 5px;
+                color: red;
+            }
+            .footer .copyright{
+                text-align: center;
+            }
+
+
+   </style>
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg" style=" background-image: url(./img/banner-bg.jpg); color :white;display: flex; flex-direction: row; justify-content: space-around; margin-left: 5px; padding: -70px;">
+        <div class="container-fluid">
+          <a class="navbar-brand " href="#">
+            <img style="width: 90px;" src="assets/logo/logo-removebg-preview (4).png"><span style="color:black; font-size: 30px;margin-top: 10px;">Travel-Villa</span></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="./../index.html" target="_blank" style="margin-left: 30px;">Home</a>
+              </li>
+              <li class="nav-item" style="margin-left: 30px;">
+                <a class="nav-link" href="./state.html">States</a>
+              </li>
+              <li class="nav-item" style="margin-left: 20px;">
+                <a class="nav-link" href="./aboutus.html" target="_blank">About Us</a>
+              </li>
+              <li class="nav-item" style="margin-left: 20px;">
+                <a class="nav-link" href="./contact-us.html" target="_blank">Contact Us</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" style="color:#0d6efd; margin-left: 20px;" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Book Ticket
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="./book_now.html" style="color: blue; font-size: 15px;"> Book Now</a></li>
+                  <li><a class="dropdown-item" href="./booking-cancellation.html" target="_blank"  style="color: blue; font-size: 15px;">Booking Cancelation</a></li>
+                 
+                </ul>
+              </li>
+             
+          </div>
+        </div>
+        </nav>
+
+<!-- flight section starts  -->
+
+<section class="flight" id="flight">
+
+    <div class="row " >
+
+        <div class="content">
+            <h1 style="font-family:sans-serif;font-size: 45px;">Book Now Your Tickets</h1>
+            <p style="font-size: 20px;" >To Reach Your Favourite Destination</p>
+            <a href="#flight2"><button type="button" class="btn btn-outline-success" style="height: 70px; width: 100px;"><i class="fa-solid fa-plane" style="font-size: 30px;"></i></button></a>
+            <a href="#arrivals"><button type="button" class="btn btn-outline-danger" style="height: 70px; width: 100px;"><i class="fa-solid fa-bed" style="font-size: 30px;"></i></button></a>
+            <a href="./bus.html"><button type="button" class="btn btn-outline-warning" style="height: 70px; width: 100px;"><i class="fa-solid fa-bus-simple" style="font-size: 30px;"></i></button></a>
+            <a href="./demo2.html"><button type="button" class="btn btn-outline-info" style="height: 70px; width: 100px;">I<i class="fa-solid fa-taxi" style="font-size: 30px;"></i></button></a>
+
+    
+        </div>
+
+        <div class="swiper books-slider">
+            <div class="swiper-wrapper">
+                <a href="#" class="swiper-slide"><img src="./img/t1.jpg" alt=""></a>
+                <a href="#" class="swiper-slide"><img src=".img/t2.webp" alt=""></a>
+                <a href="#" class="swiper-slide"><img src="./img/t3.jpeg" alt=""></a>
+                <a href="#" class="swiper-slide"><img src="./img/t4.jpg" alt=""></a>
+                <a href="#" class="swiper-slide"><img src="./img/t5.jpg" alt=""></a>
+                <a href="#" class="swiper-slide"><img src="./img/t6" alt=""></a>
+                <a href="#" class="swiper-slide"><img src="./img/t7" alt=""></a>
+                <a href="#" class="swiper-slide"><img src="./img/t4.jpg" alt=""></a>
+            </div>
+            <img src="./img/stand.png" class="stand" alt="">
+        </div>
+
+    </div>
+
+</section>
+<div class="flight2" id="flight2">
+
+    <form class="form-group">
+        <h1 class="text-center" style="color:white;font-size: 35px; font-family: 'Times New Roman', Times, serif;" >Flight Booking </h1>
+<marquee direction="right" style="font-size: 23px; font-family: 'Times New Roman', Times, serif;color: red;" ><i class="fa-solid fa-plane-departure"></i>&nbsp;&nbsp;Book Now!</marquee>
+        <div id="form"><!--form-->
+            <h3 class="text-white" style="font-size: 27px;">Booking Details</h3>
+
+        <div id="input"><!--input-->
+            
+            <label class="text-white">Depart From :</label>
+            <select  id="input-group" style="background: black;">
+                <option value="">Aurangabad Airport</option>
+                <option value="">Chandrapur Airport</option>
+                <option value="">Dr. Babasaheb Ambedkar International Airport</option>
+                <option value="">Karad Airport</option>
+                <option value=""> International Airport Mumbai</option>
+                <option value="">Bellary Airport</option>
+            </select>&nbsp;&nbsp;
+            <label class="text-white">Going To :</label>
+            <select  id="input-group" style="background: black;">
+                <option value="">Bokaro Airport</option>
+                <option value="">Mandi Airport</option>
+                <option value="">Shimla Airport</option>
+                <option value="">Mumbai International Airport</option>
+            </select>
+           <br>
+            <label class="text-white">Departure Date</label>
+            <input type="date" id="input-group" >
+            <label class="text-white">Departure Time</label>
+            <input type="Time" id="input-group" >
+            <select  id="input-group" style="background: black;">
+                <option value="">Preffered Airline</option>
+                <option value="">IndoGo</option>
+                <option value="">AirIndia</option>
+                <option value="">SpaceJet</option>
+            </select>
+            <select  id="input-group" style="background: black;">
+                <option value="">Preffered Seating</option>
+                <option value="">Economy Class</option>
+                <option value="">Business Class</option>
+                <option value="">First Class</option>
+            </select>
+            </div><!--input-->
+
+            <div id="input2" style="font-size:15px;"><!--input2-->
+                <input type="number" id="input-group" placeholder="Adult">
+                <input type="number" id="input-group" placeholder="Children(2-11years)">
+                <input type="number" id="input-group" placeholder="infant(under 2years)">
+            </div><!--input2-->
+
+            <div id="input3" style="font-size:15px;"><!--input3-->
+                <span id="input-group" class="text-primary">Select Your Fare</span> 
+                <input type="radio" id="input-group" name="r">
+                <label class="text-white" for="input-group">One Way</label>
+                <input type="radio" id="input-group" name="r">
+                <label class="text-white" for="input-group">Round Trip</label>
+            </div><!--input3-->
+
+            <div id="input4" style="font-size:15px;"><!--input4-->
+                <label class="text-white">Return Date :</label>
+                <input type="date" id="input-group">
+                <label class="text-white">Return Time :</label>
+                <input type="time" id="input-group">
+                
+            </div><!--input4-->
+
+            <div id="input5" ><!--input5-->
+                <h3 class="text-white" style="font-size: 27px;">Personal Details</h3>
+            </div><!--input5-->
+
+            <div id="input6" style="font-size:15px;"><!--input6-->
+                <label style="font-size:15px;color: white;"> Full Name</label>
+                <input type="text" id="input-group">
+                <i class="fa-solid fa-phone" style="color: white ;font-size:larger;"></i>
+                <input type="tel" id="input-group" ><br>
+                <i class="fa-solid fa-envelope" style="color: white ;font-size:larger;"></i>
+                <input type="email" id="input-group1">
+            </div><!--input6--><br>
+            <br>
+            <button type="submit" class="btn btn-primary text-white" style="font-size:18px;">Submit Form</button>
+            <button type="reset" class="btn btn-warning text-white" style="font-size:18px;">Clear Form</button>
+        </div><!--form-->
+
+    </form><!--form-->
+
+</div>
+
+
+<!--hotel section Starts-->
+
+<section class="arrivals" id="arrivals">
+    
+    <h1 style="font-size: 35px; font-family: 'Times New Roman', Times, serif;  background-color: bisque;"> <i class="fa-solid fa-hotel" style="font-size: 33px ;"></i>&nbsp;&nbsp;Stay Here</h1> <br>
+
+    <div class="swiper arrivals-slider">
+
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide box">
+                <div class="card">
+                    <img src="./img/h1.jpg" alt="Avatar" style="width:100%; height: 250px;">
+                    <div class="container" >
+            
+                      <h3>New Plaza Hotel , Mumbai</h3>
+                      <p>Situated within 3.5 km of Vidarbha Cricket Association Stadium and 2.9 km of Sitabuldi Fort, SPOT ON 46946 Hotel Aalishan offers rooms
+                           in Nagpur. All rooms boast a TV .The accommodation features a 24-hour front desk and room service for guests.</p>
+                    
+                        <i class="fas fa-star" style="color: orange;"></i>
+                        <i class="fas fa-star" style="color: orange;"></i>
+                        <i class="fas fa-star" style="color: orange;"></i>
+                        <i class="fas fa-star" style="color: orange;"></i>
+                        <i class="fas fa-star-half-alt" style="color: orange;"></i>
+                        <br><br>
+                        <a href="#hotel"><button  type="button" class="btn btn-danger" style="width:100px;">Book Now</button></a>
+                   
+                        
+                      
+                    </div>
+                </div>
+            </div>
+            
+            <div class="swiper-slide box">
+                <div class="card">
+                    <img src="./img/h2.jpg" alt="Avatar" style="width:100%; height: 250px;">
+                    <div class="container" >
+            
+                      <h3>Treebo Trend Hillway Inn Mahabaleshwar</h3>
+                      <p>Treebo Trend Hillway Inn Mahabaleshwar is situated in Mahabaleshwar, within 1.9 km of Venna Lake and 4.3 km 
+                    of Bombay Point. Among the facilities of this property are a restaurant, a 24-hour front desk and room service.</p>
+                   
+                        <i class="fas fa-star" style="color: orange;"></i>
+                        <i class="fas fa-star" style="color: orange;"></i>
+                        <i class="fas fa-star" style="color: orange;"></i>
+                        <i class="fas fa-star" style="color: orange;"></i>
+                        <i class="fas fa-star-half-alt" style="color: orange;"></i>
+                        <br><br>
+                        <a href="#hotel"><button  type="button" class="btn btn-danger" style="width:100px;">Book Now</button></a>
+                 
+                        
+                      
+                    </div>
+                </div>
+            </div>
+            
+            <div class="swiper-slide box">
+                <div class="card">
+                    <img src="./img/h3.jpg" alt="Avatar" style="width:100%; height: 250px;">
+                    <div class="container" >
+            
+                      <h3>OAKWOOD Goa</h3>
+                      <p>Situated in Goa, 400 m from Mapro Garden, OAKWOOD mahabaleshwar features accommodation with a restaurant, free private parking, 
+                          a garden and a terrace. Boasting family rooms, this property also provides guests with a children's playground.</p>
+                        <i class="fas fa-star" style="color: orange;"></i>
+                        <i class="fas fa-star" style="color: orange;"></i>
+                        <i class="fas fa-star" style="color: orange;"></i>
+                        <i class="fas fa-star" style="color: orange;"></i>
+                        <i class="fas fa-star-half-alt" style="color: orange;"></i>
+                        <br><br>
+                        <a href="#hotel"><button  type="button" class="btn btn-danger" style="width:100px;">Book Now</button></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="swiper-slide box">
+                <div class="card">
+                    <img src="./img/s5.jpg" alt="Avatar" style="width:100%; height: 250px;">
+                    <div class="container" >
+            
+                      <h3>Hotel Parag</h3>
+                      <p>Hotel Parag is situated in Pune, within 3 km of Pataleshwar Cave Temple and 3.8 km of Fergusson College. The property 
+                          is around 1.7 km from Srimant Dagadusheth Halwai Ganapati Temple, 2.2 km from Raja Dinkar Kelkar Museum.</p>
+                    
+                        <i class="fas fa-star" style="color: orange;"></i>
+                        <i class="fas fa-star" style="color: orange;"></i>
+                        <i class="fas fa-star" style="color: orange;"></i>
+                        <i class="fas fa-star" style="color: orange;"></i>
+                        <i class="fas fa-star-half-alt" style="color: orange;"></i>
+                        <br><br>
+                        <a href="#hotel"><button  type="button" class="btn btn-danger" style="width:100px;">Book Now</button></a>
+  
+                      </div>
+                </div>
+            </div>
+            <div class="swiper-slide box">
+                <div class="card">
+                    <img src="./img/s9.jpg" alt="Avatar" style="width:100%; height: 250px;">
+                    <div class="container" >
+            
+                      <h3>Flagship Hotel Orient Classic</h3>
+                      <p>Featuring 3-star accommodation, OYO 79904 Flagship Hotel Orient Classic is located in Nagpur, 6 km from Vidarbha Cricket Association Stadium and 1.4 km from Ambazari Lake. Featuring a restaurant, this 3-star
+                           hotel has air-conditioned rooms with a private bathroom. </p>
+                    
+                        <i class="fas fa-star" style="color: orange;"></i>
+                        <i class="fas fa-star" style="color: orange;"></i>
+                        <i class="fas fa-star" style="color: orange;"></i>
+                        <i class="fas fa-star" style="color: orange;"></i>
+                        <i class="fas fa-star-half-alt" style="color: orange;"></i>
+                        <br><br>
+                        <a href="#hotel"><button  type="button" class="btn btn-danger" style="width:100px;">Book Now</button></a>
+  
+                      </div>
+                </div>
+            </div>
+
+            
+        </div>
+
+    </div>
+
+
+</section>
+
+<!-- arrivals section ends -->
+
+
+
+
+
+
+<div class="hotel" id="hotel">
+    
+    <form class="form-group" >
+        <h1 class="text-center" style="color:white;font-size: 35px; font-family: 'Times New Roman', Times, serif;" >Book Hotel Here</h1>
+        <marquee direction="right" style="font-size: 23px; font-family: 'Times New Roman', Times, serif;color: red;" >Book Now!</marquee>
+        <div id="form"><!--form-->
+            <h3 class="text-white" style="font-size: 27px;">Booking Details</h3>
+
+        <div id="input"><!--input-->
+            
+            <label class="text-white">Choose Hotel :</label>
+            <select  id="input-group" style="background: black;">
+                <option value="">Holyday in Express ,Pune</option>
+                <option value="">Fairfield By Mariotte ,Mumbai</option>
+                <option value="">Treebo Trends Nagpur </option>
+                <option value="">Funland ,Karad </option>
+                <option value=""> International Resort Mumbai</option>
+                <option value="">Ballett ,Shimla</option>
+            </select>&nbsp;&nbsp;
+            
+           <br>
+            <label class="text-white">Check-In </label>
+            <input type="date" id="input-group" >
+            <label class="text-white">Check-Out</label>
+            <input type="date" id="input-group" >
+            
+            </select>
+            </div><!--input-->
+            
+            <div id="input2" style="font-size:15px;"><!--input2-->
+                <label class="text-white">1 Room : 2 Quest</label>
+                <input type="number" id="input-group" placeholder="Adult">
+                <input type="number" id="input-group" placeholder="Children(2-11years)">
+                <input type="number" id="input-group" placeholder="infant(under 2years)">
+            </div><!--input2-->
+
+           
+
+            
+
+            <div id="input5" ><!--input5-->
+                <h3 class="text-white" style="font-size: 27px;">Personal Details</h3>
+            </div><!--input5-->
+
+            <div id="input6" style="font-size:15px;"><!--input6-->
+                <label style="font-size:15px;color: white;"> Full Name</label>
+                <input type="text" id="input-group">
+                <i class="fa-solid fa-phone" style="color: white ;font-size:larger;"></i>
+                <input type="tel" id="input-group" ><br>
+                <i class="fa-solid fa-envelope" style="color: white ;font-size:larger;"></i>
+                <input type="email" id="input-group1">
+            </div><!--input6--><br>
+            <br>
+            <button type="submit" class="btn btn-primary text-white" style="font-size:18px;">Submit Form</button>
+            <button type="reset" class="btn btn-warning text-white" style="font-size:18px;">Clear Form</button>
+        </div><!--form-->
+
+    </form><!--form-->
+
+</div>
+
+</section>
+<section class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 mb-4">
+          <img src="./assets/logo/logo-removebg-preview (4).png" class="footer-logo" />
+          We decided to turn our travel blog from a hobby into our full-time
+          job. We would’ve had so much regret if we didn’t take this
+          opportunity. Now, each of these travel quotes fit the stories we’ve
+          made
+        </div>
+        <div class="col-md-3 mt-4">
+          <h4>Features</h4>
+          <p>Deals & Offers</p>
+          <p>Customer Reviews</p>
+          <p>Customer Policy</p>
+        </div>
+        <div class="col-md-3 mt-4">
+          <h4>Quick Contact</h4>
+          <p><i class="fa fa-phone-square"></i>+91 1234567890</p>
+          <p><i class="fa fa-envelope"></i>hello@gmail.com</p>
+          <p><i class="fa fa-home"></i>Nagpur,Maharashtra,India</p>
+        </div>
+        <div class="col-md-3 mt-4">
+          <h4>Follow Us On</h4>
+          <p><i class="fa fa-facebook-official"></i>Facebook</p>
+          <p><i class="fa fa-youtube-play"></i>youtube</p>
+          <p><i class="fa fa-twitter"></i>Twitter</p>
+        </div>
+      </div>
+      <hr />
+      <p class="copyright">
+        Made with<i class="fa fa-heart"></i>Thankyou So Much for visiting this
+        website...
+      </p>
+    </div>
+  </section>
+
+
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+<script src="https://kit.fontawesome.com/e872ba44e8.js" crossorigin="anonymous"></script>
+<!-- custom js file link  -->
+<script src="./../js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script
+src="https://kit.fontawesome.com/e872ba44e8.js"
+crossorigin="anonymous"
+></script>
+<script
+src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+crossorigin="anonymous"
+></script>
+<script
+      src="https://kit.fontawesome.com/e872ba44e8.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+</body>
+</html>
